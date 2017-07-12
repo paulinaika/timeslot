@@ -1,0 +1,39 @@
+<%= form_with(model: booking, local: true) do |form| %>  
+<% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%#= form.label :user_id, "Booked by" %>
+    <%#= form.collection_select :user_id, User.all, :id, :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.collection_select :name, Slot.free, :name, :name %>
+  </div>
+
+  <!-- 
+  <div class="field">
+    <%#= form.label :slot_id, "slot_id" %>
+    <%#= form.collection_select :slot_id, Slot.free, :id, :id %>
+  </div> -->
+
+  <div class="field">
+    <% if params[:slot_id].present? %>
+    <%= form.hidden_field :slot_id, Slot.free, value: params[:slot_id] %>
+    <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

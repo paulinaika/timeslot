@@ -10,6 +10,7 @@ class AdvisorsController < ApplicationController
   # GET /advisors/1
   # GET /advisors/1.json
   def show
+    @advisor = Advisor.find(params[:id])
   end
 
   # GET /advisors/new

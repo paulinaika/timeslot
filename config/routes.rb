@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :bookings
+  resources :slots
+
   resources :advisors
   devise_for :users
   root 'pages#home'
