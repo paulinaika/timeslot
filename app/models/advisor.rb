@@ -1,7 +1,7 @@
 class Advisor < ApplicationRecord
 	has_many :slots 
 
-
+	accepts_nested_attributes_for :slots
 
 	# has_many :bookings
 

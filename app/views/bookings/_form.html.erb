@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :slot_id %>
-    <%= form.collection_select :slot_id, Slot.all, :id, :id %>
+    <%= form.collection_select :slot, Slot.free, :id, :id %>
   </div>
 
   <div class="actions">

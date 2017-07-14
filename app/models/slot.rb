@@ -5,5 +5,4 @@ class Slot < ApplicationRecord
   
   enum status: [:free, :booked]
 
-
 end

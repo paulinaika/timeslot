@@ -22,12 +22,8 @@
   </div>
 
   <div class="field">
-    <%#= form.label :advisor_id %>
-    <%#= form.collection_select :advisor_id, Advisor.all, :id, :name %>
-  </div>
-
-  <div class="field">
-  <%= collection_select(:slot, :advisor, Advisor.all, :id, :name) %>
+    <%= form.label :advisor_id %>
+    <%= form.collection_select :advisor_id, Advisor.all, :id, :name %>
   </div>
 
   <div class="actions">
@@ -40,8 +36,14 @@
 
 
 
-  <%#= collection_select(:name, :advisor_id, Advisor.all, :name, :name, prompt: true) %>
 
+<%#= collection_select(:name, :advisor_id, Advisor.all, :name, :name, prompt: true) %>
+
+<%#= form.fields_for :advisor do |ff| %>
+<!--       <div>
+        <%#= ff.hidden_field :name %>
+      </div> -->
+  <%# end %>
 
 <!-- <div class="field">
     <%#= form.label :advisor_id %>
@@ -69,8 +71,6 @@
     <%#= form.collection_select :advisor_id, Advisor.all, :id, :name%>
   </div>
  -->
-
-
 
 <!--   <div class="field">
     <%#= hidden_field_tag :name, @advisor_name %>
