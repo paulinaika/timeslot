@@ -17,7 +17,7 @@
       <tr>
         <td><%= slot.start_time %></td>
         <td><%= slot.end_time %></td>
-        <td><%= slot.name%></td>
+        <td><%= slot.advisor.name%></td>
         <td><%= link_to 'Show', slot %></td>
         <td><%= link_to 'Edit', edit_slot_path(slot) %></td>
         <td><%= link_to 'Destroy', slot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,6 +27,5 @@
 </table>
 
 <br>
-
 
 <%= link_to 'New Slot', new_slot_path %>

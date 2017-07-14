@@ -1,5 +1,8 @@
 class Advisor < ApplicationRecord
 	has_many :slots 
+
+
+
 	# has_many :bookings
 
 	# def advisor_timeslots

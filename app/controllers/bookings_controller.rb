@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.all
-    # @slots = Slot.all
+    @slots = Slot.free
 
   end
 
@@ -18,9 +18,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
-    # @slots = Slot.free
     @booking = Booking.new
-    # @booking.save 
   end
 
   # GET /bookings/1/edit
@@ -32,7 +30,6 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
-    # @slot = Slot.find(params[:slot_id])
 
     respond_to do |format|
       if @booking.save

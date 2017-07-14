@@ -12,12 +12,10 @@
 
 <p>
   <strong>Advisor:</strong>
-  <%= @slot.name %>
+  <%= @slot.advisor.name %>
 </p>
 
-
 <% puts @slot.inspect %>
-
 
 <%= link_to 'Edit', edit_slot_path(@slot) %> |
 <%= link_to 'Back', slots_path %>

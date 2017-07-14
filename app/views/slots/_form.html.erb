@@ -21,24 +21,64 @@
     <%= form.datetime_select :end_time, id: :slot_end_time, :minute_step => 30 %>
   </div>
 
- <div class="field">
+  <div class="field">
+    <%#= form.label :advisor_id %>
+    <%#= form.collection_select :advisor_id, Advisor.all, :id, :name %>
+  </div>
+
+  <div class="field">
+  <%= collection_select(:slot, :advisor, Advisor.all, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+
+
+
+
+  <%#= collection_select(:name, :advisor_id, Advisor.all, :name, :name, prompt: true) %>
+
+
+<!-- <div class="field">
+    <%#= form.label :advisor_id %>
+    <%#= form.collection_select :advisor_id, Advisor.all, :id, :id %>
+  </div>
+
+  <div class="field">
+    <%#= form.label :name %>
+    <%#= form.collection_select :name, Advisor.all, :name, :name %>
+  </div>  -->
+
+
+<!--  <div class="field">
     <%#= form.label :start_time %>
     <%#= form.collection_select :advisor_id, Advisor.all, :id, :start_time %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.collection_select :name, Advisor.all, :name, :name %>
-  </div> 
+    <%#= form.label :name %>
+    <%#= form.select :advisor_name, Advisor.all.collect { |p| p.name }, include_blank: true %>
+  </div>  -->
 
-
- <div class="field">
+  <!--  <div class="field">
     <%#= form.label :advisor_id %>
-    <%#= form.collection_select :advisor_id, Advisor.all, :id, :name %>
+    <%#= form.collection_select :advisor_id, Advisor.all, :id, :name%>
+  </div>
+ -->
+
+
+
+<!--   <div class="field">
+    <%#= hidden_field_tag :name, @advisor_name %>
   </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <div class="field">
+    <%#= form.label :name %>
+    <%#= collection_select(:name, :advisor_id, Advisor.all, :name, :name, prompt: true) %>
+    <%#= select("slot", "advisor_id", Advisor.all.collect {|a| [ a.name, a.id ] }, {prompt: 'Select Advisor'}) %>
+  </div> -->

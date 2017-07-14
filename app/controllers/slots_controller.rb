@@ -5,30 +5,29 @@ class SlotsController < ApplicationController
   # GET /slots.json
   def index
     @slots = Slot.free
+    @advisors = Advisor.all
   end
 
   # GET /slots/1
   # GET /slots/1.json
   def show
-
+    @advisors = Advisor.all
   end
 
   # GET /slots/new
   def new
     @slot = Slot.new
+    @advisors = Advisor.all
   end
 
   # GET /slots/1/edit
   def edit
-  # @slot = Slot.find(params[:id])
-
   end
 
   # POST /slots
   # POST /slots.json
   def create
     @slot = Slot.new(slot_params)
-    @slot.save
 
     respond_to do |format|
       if @slot.save
@@ -75,6 +74,6 @@ class SlotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slot_params
-      params.require(:slot).permit(:start_time, :end_time, :advisor_id, :user_id, :name, :confirmed)
+      params.require(:slot).permit(:start_time, :end_time, :advisor_id, :user_id, :name)
     end
 end

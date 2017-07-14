@@ -12,28 +12,49 @@
   <% end %>
 
   <div class="field">
-    <%#= form.label :user_id, "Booked by" %>
-    <%#= form.collection_select :user_id, User.all, :id, :email %>
+    <%= form.label :slot_id %>
+    <%= form.collection_select :slot_id, Slot.all, :id, :id %>
   </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.collection_select :name, Slot.free, :name, :name %>
-  </div>
-
-  <!-- 
-  <div class="field">
-    <%#= form.label :slot_id, "slot_id" %>
-    <%#= form.collection_select :slot_id, Slot.free, :id, :id %>
-  </div> -->
-
-  <div class="field">
-    <% if params[:slot_id].present? %>
-    <%= form.hidden_field :slot_id, Slot.free, value: params[:slot_id] %>
-    <% end %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 
 <% end %>
+
+
+
+
+
+<!--   <div class="field">
+    <%#= form.label :name %>
+    <%#= form.collection_select :name, Slot.free, :name, :name %>
+  </div>
+
+
+
+  <div class="field">
+    <%#= form.label :slot_id %>
+    <%#= form.collection_select :slot_id, Slot.free, :id, :name %>
+  </div> -->
+
+
+
+  <!-- 
+  <div class="field">
+    <%#= form.label :user_id, "Booked by" %>
+    <%#= form.collection_select :user_id, User.all, :id, :email %>
+  </div>
+
+ 
+  <div class="field">
+    <%#= form.label :slot_id, "slot_id" %>
+    <%#= form.collection_select :slot_id, Slot.free, :id, :id %>
+  </div> -->
+
+   <!-- 
+  <div class="field">
+    <%# if params[:slot_id].present? %>
+    <%#= form.hidden_field :slot_id, Slot.free, value: params[:slot_id] %>
+    <%# end %>
+  </div> -->
